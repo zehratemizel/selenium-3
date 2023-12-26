@@ -17,7 +17,7 @@ class Test_Case_Homework2:
         self.driver.quit()
 
 
-    @pytest.mark.parametrize("username,password",[("1","secret_sauce"),("locked_out_user","1"),("1","1")])
+    @pytest.mark.parametrize("username,password",[("1","secret_sauce"),("standard_user","1"),("1","1")])
     def test_invalid_login(self,username,password):
         usernameInput = WebDriverWait(self.driver,5).until(ec.visibility_of_element_located((By.ID,"user-name")))
         usernameInput.send_keys(username)
